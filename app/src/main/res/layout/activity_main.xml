@@ -16,22 +16,33 @@
         android:textStyle="bold"
         android:text="@string/article_title" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/article_subheading"
-        android:layout_below="@id/article_heading"
-        android:padding="@dimen/padding_regular"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:text="@string/article_subtitle" />
-    
-    <TextView
+       <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/article_text"
-        android:id="@+id/article"
-        android:layout_below="@id/article_subheading"
-        android:lineSpacingExtra="@dimen/line_spacing"
-        android:padding="@dimen/padding_regular" />
+        android:layout_below="@id/article_heading">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="120dp"
+                   android:layout_height="match_parent"
+                   android:id="@+id/article_subheading"
+                   android:padding="8dp"
+                   android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                   android:text="@string/article_subtitle"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/article_text"
+                        android:id="@+id/article"
+                        android:padding="@dimen/padding_regular"/>
+                </LinearLayout>
+           </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
